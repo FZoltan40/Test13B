@@ -74,6 +74,26 @@
   },
   {
     "ContainingType": "Project1.Controllers.CarController",
+    "Method": "GetBrandsAfter2020",
+    "RelativePath": "cars/after2020",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project1.Controllers.CarController",
+    "Method": "GetBrandLikePattern",
+    "RelativePath": "cars/brandLikePattern",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project1.Controllers.CarController",
     "Method": "GetCarById",
     "RelativePath": "cars/getbyid",
     "HttpMethod": "GET",
@@ -86,6 +106,36 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project1.Controllers.CarController",
+    "Method": "GetNumberOfBrands",
+    "RelativePath": "cars/numOfBrands",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project1.Controllers.CarController",
+    "Method": "GetNumberOfRecord",
+    "RelativePath": "cars/numOfRecords",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project1.Controllers.CarController",
+    "Method": "UpdateBrand",
+    "RelativePath": "cars/replaceBrands",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]
