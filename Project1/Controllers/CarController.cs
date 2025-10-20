@@ -40,5 +40,95 @@ namespace Project1.Controllers
                 return cars;
             }
         }
+
+        [HttpGet("getbyid")]
+        public object GetCarById(int id)
+        {
+            conn.connection.Open();
+
+            string sql = "SELECT * FROM cars WHERE Id=@id";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn.connection);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            dr.Read();
+
+            var car = new CarDto
+            {
+                Id = dr.GetInt32(0),
+                Brand = dr.GetString(1),
+                Type = dr.GetString(2),
+                License = dr.GetString(3),
+                Date = dr.GetInt32(4)
+            };
+            conn.connection.Close();
+
+            return new { result = car };
+
+        }
+
+        [HttpPost]
+        public object AddNewREcord(CreateCarDto createCarDto)
+        {
+            conn.connection.Open();
+
+            string sql = "INSERT INTO `cars`(`Brand`, `Type`, `License`, `Date`) VALUES (@brand,@type,@license,@date)";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn.connection);
+
+            cmd.Parameters.AddWithValue("@brand", createCarDto.Brand);
+            cmd.Parameters.AddWithValue("@type", createCarDto.Type);
+            cmd.Parameters.AddWithValue("@license", createCarDto.License);
+            cmd.Parameters.AddWithValue("@date", createCarDto.Date);
+
+            cmd.ExecuteNonQuery();
+
+            conn.connection.Close();
+            return new { message = "Sikeres hozzáadás", result = createCarDto };
+        }
+
+        [HttpDelete]
+        public object Delete(int id)
+        {
+            conn.connection.Open();
+
+            string sql = "DELETE FROM cars WHERE Id = @id";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn.connection);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+
+            conn.connection.Close();
+
+            return new { message = "Sikeres törlés" };
+        }
+
+        [HttpPut]
+        public object Update(int id, CarDto carDto)
+        {
+            conn.connection.Open();
+
+            string sql = "UPDATE `cars` SET `Brand`=@brand,`Type`=@type,`License`=@license,`Date`=@date WHERE Id = @id;";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn.connection);
+
+            cmd.Parameters.AddWithValue("@brand", carDto.Brand);
+            cmd.Parameters.AddWithValue("@type", carDto.Type);
+            cmd.Parameters.AddWithValue("@license", carDto.License);
+            cmd.Parameters.AddWithValue("@date", carDto.Date);
+            cmd.Parameters.AddWithValue("@id", id);
+
+
+            cmd.ExecuteNonQuery();
+
+            conn.connection.Close();
+
+            return new { message = "Sikeres frissítés", result = carDto };
+        }
     }
 }

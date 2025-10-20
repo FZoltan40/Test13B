@@ -54,3 +54,4 @@ D:\Desktop\2025_2026\13BBacend\NetCore\Test\Project1\bin\Debug\net8.0\runtimes\w
 D:\Desktop\2025_2026\13BBacend\NetCore\Test\Project1\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 D:\Desktop\2025_2026\13BBacend\NetCore\Test\Project1\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\Desktop\2025_2026\13BBacend\NetCore\Test\Project1\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+D:\Desktop\2025_2026\13BBacend\NetCore\Test\Project1\obj\Debug\net8.0\Project1.sourcelink.json
